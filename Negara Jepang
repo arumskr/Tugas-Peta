@@ -1,0 +1,26 @@
+import networkx as nx
+import matplotlib.pyplot as plt
+
+# Membuat graf
+  G = nx.Graph()
+
+# Menambahkan 10 provinsi sebagai node
+  provinsi = ['Tokyo', 'Osaka', 'Kyoto', 'Hokkaido', 'Aichi', 'Hiroshima', 'Fukuoka', 'Kanagawa', 'Chiba', 'Saitama']
+  G.add_nodes_from(provinsi)
+
+# Menambahkan 30 jalan sebagai edge
+  jalan = [('Tokyo', 'Osaka'), ('Tokyo', 'Kyoto'), ('Osaka', 'Kyoto'), ('Tokyo', 'Hokkaido'), ('Osaka', 'Hokkaido'),
+           ('Hokkaido', 'Aichi'), ('Aichi', 'Hiroshima'), ('Hiroshima', 'Fukuoka'), ('Fukuoka', 'Kyoto'),
+           ('Kyoto', 'Kanagawa'), ('Kanagawa', 'Chiba'), ('Chiba', 'Saitama'), ('Saitama', 'Tokyo'),
+           ('Osaka', 'Aichi'), ('Aichi', 'Hokkaido'), ('Hokkaido', 'Hiroshima'), ('Hiroshima', 'Kyoto'),
+           ('Kyoto', 'Fukuoka'), ('Fukuoka', 'Kanagawa'), ('Kanagawa', 'Chiba'), ('Chiba', 'Tokyo'),
+           ('Tokyo', 'Saitama'), ('Saitama', 'Osaka'), ('Osaka', 'Hokkaido'), ('Hokkaido', 'Aichi'),
+           ('Aichi', 'Hiroshima'), ('Hiroshima', 'Kyoto'), ('Kyoto', 'Fukuoka'), ('Fukuoka', 'Kanagawa'),
+           ('Kanagawa', 'Chiba')]
+
+  G.add_edges_from(jalan)
+
+# Menampilkan graf
+  plt.figure(figsize=(10, 6))
+  nx.draw(G, with_labels=True, font_weight='bold')
+  plt.show()
